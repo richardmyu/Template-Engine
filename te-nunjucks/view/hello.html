@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello {{ name }}</title>
+</head>
+<body>
+  <h3>Fruits List</h3>
+  {% for item in fruits %}
+    <p>{{ item }}</p>
+  {% endfor %}
+  <p>Total:{{ count | hex }}</p>
+  {% if count %}
+  haha
+  {% endif %}
+</body>
+</html>

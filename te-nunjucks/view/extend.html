@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{# 注释语法 #}
+{#
+  extends 关键字：用来继承模板
+  定义同名 block 用来覆盖
+  其他 block 继承
+  （父模板中）不存在的 block 不会渲染
+#}
+
+{% block header %}
+  <h1>{{ header }}</h1>
+{% endblock %}
+
+{% block body %}
+  <p>{{ body | replace('/al/g','la') | capitalize }}</p>
+{% endblock %}
+
+{# super 关键字：调用父模板进行渲染 #}
+{% block test %}
+super-test
+{{ super() }}
+{% endblock %}
+
+{% block footer %}
+super-footer
+{{ super() }}
+{% endblock %}
