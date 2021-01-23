@@ -1,0 +1,6 @@
+{# macro 关键字：宏，定义可复用的内容 #}
+{% macro field(name, value='', type='text') %}
+  <div class="field">
+    <input type="{{ type }}" name="{{ name }}" value="{{ value }}" />
+  </div>
+{% endmacro%}

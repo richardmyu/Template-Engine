@@ -1,8 +1,8 @@
 const njk = require('nunjucks');
 
 // renderString
-njk.configure({ autoescape: true });
-console.log(njk.renderString('Hello {{username}}', { username: 'yu' }));
+// njk.configure({ autoescape: true });
+// console.log(njk.renderString('Hello {{username}}', { username: 'yu' }));
 
 function createEnv(path, opts) {
   const autoescape = opts.autoescape === undefined ? true : opts.autoescape,
@@ -49,11 +49,17 @@ const s = env.render('hello.html', {
   count: 12000
 });
 
-console.log('---------');
-console.log(s);
-console.log('---------');
+// console.log('---------');
+// console.log(s);
+// console.log('---------');
 
 console.log(env.render('extend.html', {
   header: 'Hello',
-  body: 'bal bal bal'
+  body: 'bal bal bal',
+  obj: {
+    '小明': 18,
+    '小红': 17
+  },
+  points: [[0, 1, 2], [5, 6, 7], [12, 13, 14]],
+  deeppoints: [[[0], [1], [2]], [[5], [6], [7]], [[12], [13], [14]]]
 }));
